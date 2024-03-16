@@ -4,9 +4,9 @@ import React from "react";
 
 const NavLinks = () => {
   return (
-    <div className="flex gap-4">
+    <div className="">
       {links.map((link, index) => (
-        <Link href={link.path} key={index}>
+        <Link href={link.path} key={index} className="font-bold text-lg">
           {link.title}
         </Link>
       ))}
