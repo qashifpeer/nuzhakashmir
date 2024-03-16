@@ -12,17 +12,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const handleClick = () => setToggle(!toggle);
 
-  const NavLinksDesktop = (
-    <>
-      <div className="flex gap-4">
-        {links.map((link, index) => (
-          <Link href={link.path} key={index} className="font-bold text-lg">
-            {link.title}
-          </Link>
-        ))}
-      </div>
-    </>
-  );
+  
   return (
     <header className="bg-slate-900 text-slate-100 ">
       <nav className="bg-slate-900 text-slate-100 flex justify-between items-center h-16 max-w-5xl px-4 mx-auto z-30 shadow-xl transition-all duration-500">
