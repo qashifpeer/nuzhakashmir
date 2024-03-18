@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,4 +50,25 @@
     --input: 12 6.5% 15.1%;
     --ring: 20.5 90.2% 48.2%;
   }
+
+  .font-satisfy {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    
+  }
+
+  .font-kalam {
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+.montserrat-normal {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
 }
