@@ -80,7 +80,7 @@ const FeatureStories = () => {
               <p className="text-sm text-gray-400 py-2">Qashif Peer</p>
               <p className="text-lg text-gray-500 line-clamp-4">
                 Having been established in 1979, District Kupwara is the
-                northern frontier district of Kashmir, spanning 2379 square
+                northern frontier district of Kashmir, spanning 23719 square
                 kilometres and boasting over 240 kilometres of land area. There
                 is so much natural beauty in the district. There are many
                 stunning locations that one can explore. Here’s a list of a few
