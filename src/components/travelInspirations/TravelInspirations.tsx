@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import featureImage from "/public/images/forest_sunlight.jpg";
+import baskets from "/public/images/baskets.jpg";
+import biryani from "/public/images/biryani.jpg";
+import rural from "/public/images/rural.jpg";
+import nature from "/public/images/nature.jpg";
 import { Button } from "../ui/button";
 
 const TravelInspirations = () => {
@@ -10,7 +13,7 @@ const TravelInspirations = () => {
         {/* card-1 */}
         <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={featureImage}
+            src={baskets}
             alt="forest with sunlight"
             width={300}
             height={300}
@@ -18,9 +21,9 @@ const TravelInspirations = () => {
           <h3 className="text-center text-base font-bold py-1">Culture Diversity</h3>
         </div>
         {/* card-2 */}
-        <div className="flex flex-col bg-slate-100">
+        <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={featureImage}
+            src={biryani}
             alt="forest with sunlight"
             width={300}
             height={300}
@@ -29,9 +32,9 @@ const TravelInspirations = () => {
         </div>
 
         {/* card-3 */}
-        <div className="flex flex-col bg-slate-100">
+        <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={featureImage}
+            src={rural}
             alt="forest with sunlight"
             width={300}
             height={300}
@@ -39,9 +42,9 @@ const TravelInspirations = () => {
           <h3 className="text-center text-base font-bold py-1">Rural Lust</h3>
         </div>
         {/* card-4 */}
-        <div className="flex flex-col bg-slate-100">
+        <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={featureImage}
+            src={nature}
             alt="forest with sunlight"
             width={300}
             height={300}

@@ -3,6 +3,7 @@ import Footer from "./footer/Footer";
 import Hero from "./hero/Hero";
 import FeatureStories from "./featureStories/FeatureStories";
 import TravelInspirations from "./travelInspirations/TravelInspirations";
+import FeatureCard from "./featureStories/FeatureCard";
 
 
 export {
@@ -11,5 +12,6 @@ export {
     Hero,
     FeatureStories,
     TravelInspirations,    
+    FeatureCard,
 
 }
