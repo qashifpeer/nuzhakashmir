@@ -5,13 +5,14 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className="flex flex-col items-center justify-center">
+     
       <div className="relative w-full h-[90vh]">
         <Image
           src={background}
           alt="hero image"
           width={1280}
           height={853}
-          className="w-full h-full"
+          className="w-full h-full bg-scroll"
         />
 
         <div className="absolute p-4  top-0 left-0 right-0 w-full h-full flex flex-col items-center justify-center bg-emerald-800/20 backdrop-brightness-75">
@@ -22,6 +23,7 @@ const Hero = () => {
           <button className="text-slate-100 montserrat-normal my-6 outline-none uppercase text-3xl border border-primary px-4 py-2 rounded-full bg-primary/20 transition-all duration-300 hover:bg-primary/75 hover:translate-y-2 ">Explore Now</button>
         </div>
       </div>
+
     </section>
   );
 };

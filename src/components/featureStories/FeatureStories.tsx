@@ -1,121 +1,77 @@
 import Image from "next/image";
 import React from "react";
-import featureimage from "../../../public/images/forest_sunlight.jpg";
+import featureImage from "/public/images/forest_sunlight.jpg";
+import { Button } from "../ui/button";
+import { client, getData, getPosts } from "@/lib/client";
+import FeatureCard from "./FeatureCard";
+import Link from "next/link";
 
-const FeatureStories = () => {
+// async function getData(){
+//   const query =
+//   `
+//   *[_type == 'post']{
+//     _id,
+//         title,
+//         shortDescription,
+//         "slug":slug.current,
+//       'image':featureImage.asset->url,
+//         publishedAt,
+//       'body': pt::text(body),
+//       'author' : *[_type == 'author' && _id== ^.author._ref][0]{
+//       _id,
+//         name,
+//         'slug' : slug.current,
+//       },
+//     categories[]->{
+//       _id,
+//       name
+//     },
+//         'content' : body
+
+//   }
+//   `
+//   const data = await client.fetch(query);
+//   return data;
+// }
+
+const FeatureStories = async () => {
+  const posts: fetchedData[] = await getData();
+  // console.log(posts);
   return (
-    <section className="max flex flex-col max-w-6xl mx-auto mt-4">
-      <div>
-        <div className="feature-card flex shadow-lg">
-          
-          <Image
-            src={featureimage}
-            alt="forest with sunlight"
-            width={600}
-            height={400}
-          />
-          
+    <section className="flex flex-col max-w-6xl mx-auto mt-4">
+      <div className="">
+        <Link href={posts[0].slug}>
+          <div className="feature-card flex shadow-lg">
+            <Image
+              src={posts[0].image}
+              alt="forest with sunlight"
+              width={600}
+              height={400}
+            />
 
-          <div className="flex flex-col px-6 py-4">
-            <h2 className="text-3xl font-semibold text-gray-600">
-              Exploring Kupwara: Spectacular Destinations Unveiled.{" "}
-            </h2>
-            <p className="text-sm text-gray-400 py-2">Qashif Peer</p>
-            <p className="text-lg text-gray-500">
-              Having been established in 1979, District Kupwara is the northern
-              frontier district of Kashmir, spanning 2379 square kilometres and
-              boasting over 240 kilometres of land area. There is so much
-              natural beauty in the district. There are many stunning locations
-              that one can explore. Here’s a list of a few places that everyone
-              should go. Table of Contents Lolab:
-            </p>
+            <div className="flex flex-col px-6 py-4">
+              <h2 className="text-3xl font-semibold text-gray-600">
+                {posts[0].title}
+              </h2>
+              <p className="text-sm text-gray-400 py-2">
+                {" "}
+                {posts[0].author.name}
+              </p>
+              <p className="text-lg text-gray-500">
+                {posts[0].shortDescription}
+              </p>
+            </div>
           </div>
+        </Link>
+        <div className="flex gap-4 justify-evenly">
+          {posts.slice(1).map((post, idx) => (
+            <FeatureCard key={idx} postData={post} />
+          ))}
         </div>
-        <div className="flex gap-6 justify-center">
-          
-          {/* card 1 */}
-          <div className="feature-card flex flex-col shadow-lg w-[30%] mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
-           <div className="relative">
-            <Image
-              src={featureimage}
-              alt="forest with sunlight"
-              width={400}
-              height={300}
-            />
-            <span className="absolute top-4 right-4 bg-gray-600/60 uppercase text-sm leading-3 text-white px-4 py-1 rounded-full">explore</span>
-            </div>
-
-            <div className="flex flex-col px-6 py-4">
-              <h2 className="text-3xl font-semibold text-gray-600">
-                Exploring Kupwara: Spectacular Destinations Unveiled.{" "}
-              </h2>
-              <p className="text-sm text-gray-400 py-2">Qashif Peer</p>
-              <p className="text-lg text-gray-500 line-clamp-4">
-                Having been established in 1979, District Kupwara is the
-                northern frontier district of Kashmir, spanning 2379 square
-                kilometres and boasting over 240 kilometres of land area. There
-                is so much natural beauty in the district. There are many
-                stunning locations that one can explore. Here’s a list of a few
-                places that everyone should go. Table of Contents Lolab:
-              </p>
-            </div>
-          </div>
-
-          {/* card 2 */}
-          <div className="feature-card flex flex-col shadow-lg w-[30%] mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
-          <div className="relative">
-            <Image
-              src={featureimage}
-              alt="forest with sunlight"
-              width={400}
-              height={300}
-            />
-            <span className="absolute top-4 right-4 bg-gray-600/60 uppercase text-sm leading-3 text-white px-4 py-1 rounded-full">explore</span>
-            </div>
-
-            <div className="flex flex-col px-6 py-4">
-              <h2 className="text-3xl font-semibold text-gray-600">
-                Exploring Kupwara: Spectacular Destinations Unveiled.{" "}
-              </h2>
-              <p className="text-sm text-gray-400 py-2">Qashif Peer</p>
-              <p className="text-lg text-gray-500 line-clamp-4">
-                Having been established in 1979, District Kupwara is the
-                northern frontier district of Kashmir, spanning 23719 square
-                kilometres and boasting over 240 kilometres of land area. There
-                is so much natural beauty in the district. There are many
-                stunning locations that one can explore. Here’s a list of a few
-                places that everyone should go. Table of Contents Lolab:
-              </p>
-            </div>
-          </div>
-
-          {/* card 3 */}
-          <div className="feature-card flex flex-col shadow-lg w-[30%] mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
-          <div className="relative">
-            <Image
-              src={featureimage}
-              alt="forest with sunlight"
-              width={400}
-              height={300}
-            />
-            <span className="absolute top-4 right-4 bg-gray-600/60 uppercase text-sm leading-3 text-white px-4 py-1 rounded-full">explore</span>
-            </div>
-
-            <div className="flex flex-col px-6 py-4">
-              <h2 className="text-3xl font-semibold text-gray-600">
-                Exploring Kupwara: Spectacular Destinations Unveiled.{" "}
-              </h2>
-              <p className="text-sm text-gray-400 py-2">Qashif Peer</p>
-              <p className="text-lg text-gray-500 line-clamp-4">
-                Having been established in 1979, District Kupwara is the
-                northern frontier district of Kashmir, spanning 2379 square
-                kilometres and boasting over 240 kilometres of land area. There
-                is so much natural beauty in the district. There are many
-                stunning locations that one can explore. Here’s a list of a few
-                places that everyone should go. Table of Contents Lolab:
-              </p>
-            </div>
-          </div>
+        <div className="flex justify-center">
+          <Button className="mt-4 rounded-none px-10 text-lg">
+            See All Stories
+          </Button>
         </div>
       </div>
       <div></div>

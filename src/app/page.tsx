@@ -1,4 +1,4 @@
-import { FeatureStories, Hero } from '@/components'
+import { FeatureStories, Hero, TravelInspirations } from '@/components'
 import Image from 'next/image'
 
 export default function Home() {
@@ -6,6 +6,7 @@ export default function Home() {
     <div className="">
       <Hero />
       <FeatureStories />
+      <TravelInspirations />
     </div>
   )
 }
