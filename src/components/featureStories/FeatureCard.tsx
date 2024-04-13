@@ -1,9 +1,11 @@
 import Image from "next/image";
 import featureImage from '/public/images/forest_sunlight.jpg'
+import Link from "next/link";
 
 
 const FeatureCard = ({postData}) => {
   return (
+    <Link href={postData.slug}>
     <div className="feature-card flex flex-col shadow-lg w-[33%] mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
             <div className="relative">
               <Image
@@ -20,12 +22,13 @@ const FeatureCard = ({postData}) => {
               <h2 className="text-3xl font-semibold text-gray-600">
                 {postData.title}
               </h2>
-              <p className="text-sm text-gray-400 py-2">{postData.author.name}</p>
+              <p className="text-sm text-gray-400 py-2">{postData.author.name}, {(postData.publishedAt).substring(0,10)}</p>
               <p className="text-lg text-gray-500 line-clamp-4">
                 {postData.shortDescription}
               </p>
             </div>
           </div>
+          </Link>
   )
 }
 

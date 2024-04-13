@@ -16,7 +16,9 @@ const Navbar = () => {
   return (
     <header className="bg-slate-900 text-slate-100 ">
       <nav className="bg-slate-900 text-slate-100 flex justify-between items-center h-16 max-w-6xl mx-auto z-30 shadow-xl transition-all duration-500">
+      <Link href="/">
         <div className="flex items-end">
+         
           <Image
             src="/Images/logo-white.png"
             alt="forests"
@@ -29,6 +31,7 @@ const Navbar = () => {
             nuzha<span className="text-primary">kashmir</span>
           </h2>
         </div>
+        </Link>
         <div className="lg:hidden">
           <div onClick={handleClick}>{toggle ? <ImCross /> : <FaBars />}</div>
         </div>
