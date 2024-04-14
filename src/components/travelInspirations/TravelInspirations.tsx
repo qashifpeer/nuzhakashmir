@@ -1,9 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import baskets from "/public/images/baskets.jpg";
-import biryani from "/public/images/biryani.jpg";
-import rural from "/public/images/rural.jpg";
-import nature from "/public/images/nature.jpg";
 import { Button } from "../ui/button";
 
 const TravelInspirations = () => {
@@ -13,7 +9,7 @@ const TravelInspirations = () => {
         {/* card-1 */}
         <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={baskets}
+            src="/images/baskets.jpg"
             alt="forest with sunlight"
             width={300}
             height={300}
@@ -23,7 +19,7 @@ const TravelInspirations = () => {
         {/* card-2 */}
         <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={biryani}
+            src="/images/biryani.jpg"
             alt="forest with sunlight"
             width={300}
             height={300}
@@ -34,7 +30,7 @@ const TravelInspirations = () => {
         {/* card-3 */}
         <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={rural}
+            src="/images/rural.jpg"
             alt="forest with sunlight"
             width={300}
             height={300}
@@ -44,7 +40,7 @@ const TravelInspirations = () => {
         {/* card-4 */}
         <div className="flex flex-col bg-slate-100 cursor-pointer">
           <Image
-            src={nature}
+            src="/images/nature.jpg"
             alt="forest with sunlight"
             width={300}
             height={300}

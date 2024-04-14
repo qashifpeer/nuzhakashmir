@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import featureImage from "/public/images/forest_sunlight.jpg";
 import { Button } from "../ui/button";
-import { client, getData, getPosts } from "@/lib/client";
+import { client, getData } from "@/lib/client";
 import FeatureCard from "./FeatureCard";
 import Link from "next/link";
 

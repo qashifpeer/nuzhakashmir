@@ -1,5 +1,5 @@
-import { client, getData, getPosts } from "@/lib/client";
-import { PortableText } from "@portabletext/react";
+import { client, getData } from "@/lib/client";
+import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import Image from "next/image";
 
 
@@ -45,7 +45,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
         <h1>{data.title}</h1>
         <Image src={data.image} priority alt="feature Image" width={800} height={800} />
         <div className="mt-16 prose prose-lg prose-li:marker:text-primary">
-        <PortableText value={data.content} />
+        <PortableText value ={data.content} />
       </div>
 
 

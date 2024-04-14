@@ -1,5 +1,4 @@
 import React from "react";
-import background from "../../../public/images/hero.jpg";
 import Image from "next/image";
 
 const Hero = () => {
@@ -8,7 +7,7 @@ const Hero = () => {
      
       <div className="relative w-full h-[90vh]">
         <Image
-          src={background}
+          src="/images/hero.jpg"
           alt="hero image"
           width={1280}
           height={853}
