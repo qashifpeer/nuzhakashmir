@@ -6,33 +6,7 @@ import { client, getData } from "@/lib/client";
 import FeatureCard from "./FeatureCard";
 import Link from "next/link";
 
-// async function getData(){
-//   const query =
-//   `
-//   *[_type == 'post']{
-//     _id,
-//         title,
-//         shortDescription,
-//         "slug":slug.current,
-//       'image':featureImage.asset->url,
-//         publishedAt,
-//       'body': pt::text(body),
-//       'author' : *[_type == 'author' && _id== ^.author._ref][0]{
-//       _id,
-//         name,
-//         'slug' : slug.current,
-//       },
-//     categories[]->{
-//       _id,
-//       name
-//     },
-//         'content' : body
 
-//   }
-//   `
-//   const data = await client.fetch(query);
-//   return data;
-// }
 
 const FeatureStories = async () => {
   const posts: postType[] = await getData();
