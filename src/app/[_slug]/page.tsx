@@ -35,6 +35,7 @@ async function getSinglePost(slug: string){
 
 const BlogPost = async ({ params }: { params: { _slug: string } }) => {
     const data = await getSinglePost(params._slug);
+    console.log("content_type",typeof(data.content))
 //   const postTitle = params._slug;
 //   const allPosts = await getData();
 //   const singlePost = allPosts.find((post) => postTitle === post.slug);
@@ -46,6 +47,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
         <Image src={data.image} priority alt="feature Image" width={800} height={800} />
         <div className="mt-16 prose prose-lg prose-li:marker:text-primary">
         <PortableText value ={data.content} />
+        
       </div>
 
 

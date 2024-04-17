@@ -3,7 +3,7 @@ import featureImage from '/public/images/forest_sunlight.jpg'
 import Link from "next/link";
 
 
-const FeatureCard = ({postData}) => {
+const FeatureCard = ({postData}:(any)) => {
   return (
     <Link href={postData.slug}>
     <div className="feature-card flex flex-col shadow-lg w-[33%] mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">

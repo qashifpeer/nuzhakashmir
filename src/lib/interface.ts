@@ -19,7 +19,7 @@ interface Author {
     body: string;
     author: Author;
     categories: Category[];
-    content: string;
+    content: any;
   }
 
   interface fetchedData {
@@ -32,8 +32,22 @@ interface Author {
     body: string;
     author: Author;
     categories: Category[];
-    content: string;
+    content: any;
   }
 
+  interface postType {
+    _id: string;
+    title: string;
+    shortDescription: string;
+    slug: string;
+    image: string;
+    publishedAt: string;
+    body: string;
+    author: Author;
+    categories: Category[];
+    content: any;
+
+  }
+  
   
   
