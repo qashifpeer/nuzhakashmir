@@ -14,8 +14,8 @@ const Navbar = () => {
 
   
   return (
-    <header className="bg-slate-900 text-slate-100 ">
-      <nav className="bg-slate-900 text-slate-100 flex justify-between items-center h-16 max-w-6xl mx-auto z-30 shadow-xl transition-all duration-500">
+    <header className="bg-slate-900 text-slate-100">
+      <nav className="px-4 relative bg-slate-900 text-slate-100 flex justify-between items-center h-16 max-w-6xl mx-auto z-30 shadow-xl transition-all duration-500">
       <Link href="/">
         <div className="flex items-end">
          
@@ -37,9 +37,7 @@ const Navbar = () => {
         </div>
        
           <div
-            className={`max-lg:bg-slate-900 flex flex-col justify-start items-center py-16 absolute ${
-              toggle ? "top-16" : "-top-full"
-            } left-0 w-full h-screen lg:static lg:flex-row lg:py-0 lg:justify-end lg:space-x-8 lg:px-8 `}
+            className={`max-lg:bg-slate-900 flex flex-col justify-start items-center py-16 absolute w-full left-0 h-screen top-12 lg:static lg:flex-row lg:py-0 lg:justify-end lg:space-x-8 lg:px-8 ${toggle ? "left-0 " : "-left-full"}`}
           >
             {links.map((link, index) => (
               <Link

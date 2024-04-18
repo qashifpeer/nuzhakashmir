@@ -16,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=''>
+      <body className='overflow-hidden'>
         <Navbar />
         <main className='min-h-screen'>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   )
