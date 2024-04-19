@@ -12,10 +12,10 @@ const FeatureStories = async () => {
   const posts: postType[] = await getData();
   // console.log("posts_here",posts);
   return (
-    <section className="flex flex-col max-w-6xl mx-auto mt-4">
+    <section className="flex flex-col max-w-6xl mx-auto mt-4 p-4">
       <div className="">
         <Link href={posts[0].slug}>
-          <div className="feature-card flex shadow-lg">
+          <div className="feature-card md:flex shadow-lg">
             <Image
               src={posts[0].image}
               alt="forest with sunlight"
@@ -24,14 +24,14 @@ const FeatureStories = async () => {
             />
 
             <div className="flex flex-col px-6 py-4">
-              <h2 className="text-3xl font-semibold text-gray-600">
+              <h2 className="text-lg md:text-3xl font-semibold text-gray-600">
                 {posts[0].title}
               </h2>
               <p className="text-sm text-gray-400 py-2">
                 {" "}
-                {posts[0].author.name}
+                {posts[0].author.name}, {(posts[0].publishedAt).substring(0,10)}
               </p>
-              <p className="text-lg text-gray-500">
+              <p className="text-sm md:text-lg  text-gray-500 max-md:line-clamp-3">
                 {posts[0].shortDescription}
               </p>
             </div>

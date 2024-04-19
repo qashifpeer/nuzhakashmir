@@ -7,6 +7,8 @@ export default function Home() {
       <Hero />
       <FeatureStories />
       <TravelInspirations />
+      <TravelInspirations />
+      <TravelInspirations />
     </div>
   )
 }
