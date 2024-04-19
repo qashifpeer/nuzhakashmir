@@ -6,7 +6,7 @@ import Link from "next/link";
 const FeatureCard = ({postData}:(any)) => {
   return (
     <Link href={postData.slug}>
-    <div className="feature-card flex flex-col shadow-lg w-[33%] mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
+    <div className="feature-card flex flex-col shadow-lg md:w-[33%] w-full  mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
             <div className="relative">
               <Image
                 src={postData.image}
@@ -19,11 +19,11 @@ const FeatureCard = ({postData}:(any)) => {
               </span>
             </div>
             <div className="flex flex-col px-6 py-4">
-              <h2 className="text-3xl font-semibold text-gray-600">
+              <h2 className="text-lg md:text-3xl font-semibold text-gray-600">
                 {postData.title}
               </h2>
               <p className="text-sm text-gray-400 py-2">{postData.author.name}, {(postData.publishedAt).substring(0,10)}</p>
-              <p className="text-lg text-gray-500 line-clamp-4">
+              <p className="md:text-lg text-sm text-gray-500 line-clamp-3">
                 {postData.shortDescription}
               </p>
             </div>
