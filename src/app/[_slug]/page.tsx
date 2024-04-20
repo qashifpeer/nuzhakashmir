@@ -25,7 +25,7 @@ async function getSinglePost(slug: string){
             }, 
       }[0]
     `
-    const data:fetchedData = await client.fetch(query)
+    const data:FetchedData = await client.fetch(query)
     return data;
   }
 

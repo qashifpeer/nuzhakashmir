@@ -23,25 +23,15 @@ export default {
                     { title: 'Emphasis', value: 'em' }
                 ]
             },
-
-            // annotations: [
-            //     {
-            //       title: 'URL',
-            //       name: 'link',
-            //       type: 'object',
-            //       fields: [
-            //         {
-            //           title: 'URL',
-            //           name: 'href',
-            //           type: 'url',
-            //         },
-            //       ],
-            //     },
-            //   ],
         },
         {
             type: 'image',
-            options: { hotspot: true }
+            options: { hotspot: true },
+            fields: [{
+                type: 'string',
+                name: 'alt',
+                title: 'Alt',
+            }]
         }
     ]
 

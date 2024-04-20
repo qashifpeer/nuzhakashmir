@@ -7,13 +7,14 @@ interface Author {
   interface Category {
     _id: string;
     name: string;
+    slug : {current: string}
   }
   
   interface Post {
     _id: string;
     title: string;
     shortDescription: string;
-    slug: string;
+    slug: {current: string};
     image: string;
     publishedAt: string;
     body: string;
@@ -22,7 +23,7 @@ interface Author {
     content: any;
   }
 
-  interface fetchedData {
+  interface FetchedData {
     _id: string;
     title: string;
     shortDescription: string;
@@ -35,7 +36,7 @@ interface Author {
     content: any;
   }
 
-  interface postType {
+  interface PostType {
     _id: string;
     title: string;
     shortDescription: string;
