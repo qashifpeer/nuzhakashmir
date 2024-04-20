@@ -6,13 +6,14 @@ import Link from "next/link";
 const FeatureCard = ({postData}:(any)) => {
   return (
     <Link href={postData.slug}>
-    <div className="feature-card flex flex-col shadow-lg md:w-[33%] w-full  mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
+    <div className="feature-card flex flex-col shadow-lg lg:w-[33%] w-full  mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
             <div className="relative">
               <Image
                 src={postData.image}
                 alt="forest with sunlight"
                 width={400}
                 height={500}
+                className="w-full"
               />
               <span className="absolute top-4 right-4 bg-gray-600/60 uppercase text-sm leading-3 text-white px-4 py-1 rounded-full">
                 explore

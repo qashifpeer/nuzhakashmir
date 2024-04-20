@@ -43,6 +43,7 @@ const Navbar = () => {
               <Link
                 href={link.path}
                 key={index}
+                onClick={handleClick}
                 className=" flex my-4 font-bold text-lg relative group transition-all duration-500  hover:translate-x-1"
               >
                 {link.title}
