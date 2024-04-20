@@ -5,6 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
+import footerImage from "@/../../public/images/logo-white.png"
 
 const Footer = () => {
   return (

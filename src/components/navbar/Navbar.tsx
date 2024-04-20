@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
        
           <div
-            className={`max-lg:bg-slate-900 flex flex-col justify-start items-center py-16 absolute w-full left-0 h-screen top-12 lg:static lg:flex-row lg:py-0 lg:justify-end lg:space-x-8 lg:px-8 ${toggle ? "left-0 " : "-left-full"}`}
+            className={`${toggle ? "left-0 " : "-left-full"} max-lg:bg-slate-900 flex flex-col justify-start items-center py-16 absolute w-full h-screen top-12 lg:static lg:flex-row lg:py-0 lg:justify-end lg:space-x-8 lg:px-8`}
           >
             {links.map((link, index) => (
               <Link
