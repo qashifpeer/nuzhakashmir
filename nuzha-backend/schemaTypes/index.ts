@@ -4,4 +4,4 @@ import category from "./category";
 import post from "./post";
 import image from "./image";
 
-export const schemaTypes = [author, category, blockContent, post, image]
+export const schemaTypes = [author, category, blockContent, post]

@@ -1,3 +1,5 @@
+import { Rule, useInitialValue } from "sanity";
+
 export default{
     name: 'post',
     type: 'document',
@@ -7,13 +9,14 @@ export default{
             name: 'title',
             title: 'Title',
             type:'string',
+            validation: (Rule: Rule) =>  Rule.required().error('This field is required')
         },
         {
-            name : "slug",
-            title : "Slug",
-            type : "slug",
+            name : 'slug',
+            title : 'Slug',
+            type : 'slug',
             options : {
-                source : "title",
+                source : 'title',
                 maxLength : 96,
             }
         },
@@ -29,7 +32,12 @@ export default{
             type : "image",
             options : {
                 hotspot : true,
-            }
+            },
+            fields: [{
+                type: 'string',
+                name: 'alt',
+                title: 'Alt',
+            }]
         },
         {
             name : "categories",
@@ -40,12 +48,13 @@ export default{
         {
             name : 'shortDescription',
             title : 'Short Description',
-            type : "string",
+            type : "text",
         },
         {
             name: "publishedAt",
             title: 'Published at',
             type: 'datetime',
+            initialValue : () => new Date().toISOString(),
         },
         {
             name: 'body',

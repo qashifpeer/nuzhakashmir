@@ -9,7 +9,7 @@ import Link from "next/link";
 
 
 const FeatureStories = async () => {
-  const posts: postType[] = await getData();
+  const posts: PostType[] = await getData();
   // console.log("posts_here",posts);
   return (
     <section className="flex flex-col max-w-6xl mx-auto mt-4 p-4">
@@ -41,7 +41,7 @@ const FeatureStories = async () => {
           </div>
         </Link>
         <div className="flex gap-4 justify-evenly">
-          {posts.slice(1).map((post, idx) => (
+          {posts?.length>0 && posts.slice(1).map((post, idx) => (
             <FeatureCard key={idx} postData={post } />
           ))}
         </div>
