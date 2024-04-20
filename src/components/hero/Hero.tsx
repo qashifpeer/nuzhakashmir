@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import heroImage from '@/../../public/images/hero.jpg'
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
      
       <div className="relative w-full h-[100vh]">
         <Image
-          src="/images/hero.JPG"
+          src={heroImage}
           alt="hero image"
           width={1280}
           height={853}
