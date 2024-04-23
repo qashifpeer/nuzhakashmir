@@ -2,6 +2,7 @@ interface Author {
     _id: string;
     name: string;
     slug: string;
+    image: any;
   }
   
   interface Category {
@@ -9,13 +10,15 @@ interface Author {
     name: string;
     slug : {current: string}
   }
+
   
   interface Post {
     _id: string;
     title: string;
     shortDescription: string;
     slug: {current: string};
-    image: string;
+    imageUrl: string;
+    altFtImg: string;
     publishedAt: string;
     body: string;
     author: Author;
@@ -28,7 +31,8 @@ interface Author {
     title: string;
     shortDescription: string;
     slug: string;
-    image: string;
+    imageUrl: string;
+    altFtImg: string;
     publishedAt: string;
     body: string;
     author: Author;
@@ -41,7 +45,8 @@ interface Author {
     title: string;
     shortDescription: string;
     slug: string;
-    image: string;
+    imageUrl: string;
+    altFtImg: string;
     publishedAt: string;
     body: string;
     author: Author;

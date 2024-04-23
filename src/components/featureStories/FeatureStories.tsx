@@ -18,7 +18,7 @@ const FeatureStories = async () => {
           <div className="feature-card lg:flex shadow-lg"> 
           <div className="w-full lg:w-[60%]">
             <Image
-              src={posts[0].image}
+              src={posts[0].imageUrl}
               alt="forest with sunlight"
               width={600}
               height={400}

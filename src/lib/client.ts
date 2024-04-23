@@ -16,7 +16,8 @@ export async function getData(){
           title,
           shortDescription,
           "slug":slug.current,
-        'image':featureImage.asset->url,
+          'imageUrl':featureImage.asset->url,
+        'altFtImg': featureImage.alt,
           publishedAt,
         'body': pt::text(body),
         'author' : *[_type == 'author' && _id== ^.author._ref][0]{
@@ -26,7 +27,7 @@ export async function getData(){
         },
       categories[]->{
         _id,
-        name
+        name,slug
       },
           'content' : body
         
