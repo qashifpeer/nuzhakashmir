@@ -10,7 +10,8 @@ async function getSinglePost(slug: string){
         'slug' : slug.current,
           title,
           content,
-          'image':featureImage.asset->url,
+          'imageUrl':featureImage.asset->url,
+          'altFtImg': featureImage.alt,
           author,
           'body': pt::text(body),
           'content' : body,
@@ -18,10 +19,13 @@ async function getSinglePost(slug: string){
               _id,
                 name,
                 'slug' : slug.current,
+                'authorImgUrl': image.asset->url,
+                'altAuthorImg' : image.alt,
               },
          categories[]->{
               _id,
-              name
+              name,
+              slug
             }, 
       }[0]
     `
@@ -35,27 +39,19 @@ async function getSinglePost(slug: string){
 
 const BlogPost = async ({ params }: { params: { _slug: string } }) => {
     const data = await getSinglePost(params._slug);
-    // console.log("content_type",typeof(data.content))
-//   const postTitle = params._slug;
-//   const allPosts = await getData();
-//   const singlePost = allPosts.find((post) => postTitle === post.slug);
-    // console.log("newdata",data)
+    
+   
   return (
     <div className="max-w-3xl mx-auto">
-        
-        <h1 className="text-3xl font-extrabold mb-4">{data.title}</h1>
-        <p>{data.author.name}</p>
-        <Image src={data.image} priority alt="feature Image" width={800} height={800} />
+        <header> <h1 className="text-3xl font-extrabold mb-4">{data?.title}</h1></header>
+       
+        <p>{data?.author.name}</p>
+        <Image src={data?.imageUrl} priority alt={data.altFtImg} width={800} height={800} />
         <div className="mt-16 prose prose-lg prose-li:marker:text-primary">
         <PortableText value ={data.content} />
         
       </div>
 
-
-      {/* <h1>{singlePost.title}</h1>
-      <div className="mt-16 prose prose-xl">
-        <PortableText value={singlePost.content} />
-      </div> */}
     </div>
   );
 };
