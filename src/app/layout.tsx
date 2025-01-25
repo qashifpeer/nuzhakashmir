@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { GoogleTagManager } from "@next/third-parties/google";
+
 
 import './globals.css'
 import { Footer, Navbar } from '@/components'
@@ -16,7 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+       <GoogleTagManager gtmId="GTM-TDFZXWPT" />
       <body className=''>
+      <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TDFZXWPT"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Navbar />
         <main className='min-h-screen'>{children}</main>
         <Footer />
