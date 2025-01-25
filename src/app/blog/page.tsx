@@ -1,8 +1,11 @@
-import React from 'react'
+import { FeatureStories, TravelInspirations } from '@/components'
 
 const BlogPage = () => {
   return (
-    <div>BlogPage</div>
+    <div>
+      <FeatureStories />
+      <TravelInspirations />
+    </div>
   )
 }
 
