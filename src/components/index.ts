@@ -4,6 +4,8 @@ import Hero from "./hero/Hero";
 import FeatureStories from "./featureStories/FeatureStories";
 import TravelInspirations from "./travelInspirations/TravelInspirations";
 import FeatureCard from "./featureStories/FeatureCard";
+import TourPackages from "./tourPackages/TourPackages";
+import FixedHero from "./fixedHero/FixedHero";
 
 
 export {
@@ -13,5 +15,7 @@ export {
     FeatureStories,
     TravelInspirations,    
     FeatureCard,
+    TourPackages,
+    FixedHero,
 
 }
