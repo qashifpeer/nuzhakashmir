@@ -8,7 +8,22 @@ import { Footer, Navbar } from '@/components'
 
 export const metadata: Metadata = {
   title: 'NuzhaKashmir',
-  description: 'Explore Kashmir with us',
+  description: 'Dive deep into Kashmir with NuzhaKashmir.',
+  keywords: "kashmir, kashmir, pahalgam, kashmirdistance",
+  openGraph: {
+    title: "NuzhaKashmir",
+    description: "Dive deep into Kashmir with NuzhaKashmir.",
+    url: "https://nuzhakashmir.com",
+    siteName: "NuzhaKashmir",
+    images: [
+      {
+        url: "https://yourblog.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 }
 
 export default function RootLayout({
