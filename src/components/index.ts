@@ -6,6 +6,7 @@ import TravelInspirations from "./travelInspirations/TravelInspirations";
 import FeatureCard from "./featureStories/FeatureCard";
 import TourPackages from "./tourPackages/TourPackages";
 import FixedHero from "./fixedHero/FixedHero";
+import Loader from "./loader/Loader";
 
 
 export {
@@ -17,5 +18,6 @@ export {
     FeatureCard,
     TourPackages,
     FixedHero,
+    Loader
 
 }

@@ -9,9 +9,9 @@ interface Props {
 const FeatureCard = ({postData}:Props) => {
   // console.log('pdt', postData)
   return (
-    <Link href={postData.slug}>
+    <Link href={`blog/${postData.slug}`}>
     <div className="feature-card flex flex-col shadow-lg lg:w-[33%] w-full  mt-6 hover:scale-105 transition-transform duration-200 ease-out overflow-hidden rounded">
-            <div className="relative">
+            <div className="relative">        
               <Image
                 src={postData?.imageUrl}
                 alt="forest with sunlight"

@@ -29,14 +29,14 @@ const Hero: React.FC = () => {
         transition={{ duration: 1, delay: 0.5 }}
 
          className="absolute md:p-4  top-0 left-0 right-0 w-full h-full flex flex-col items-center justify-center bg-emerald-800/20 backdrop-brightness-75">
-          <motion.h1
+          <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
 
            className="font-satisfy text-slate-100 font-bold text-3xl md:text-8xl text-center">
             Escape , Explore : Borderless
-          </motion.h1>
+          </motion.h2>
           <p className="text-slate-100 text-center text-lg md:text-3xl font-kalam leading-10 py-2">
             Explore the most enchanting places with us without Breaking the Bank
           </p>
