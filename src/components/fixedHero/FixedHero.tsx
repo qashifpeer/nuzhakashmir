@@ -21,14 +21,14 @@ const FixedHero: React.FC = () => {
       <div
        className="relative z-10 text-center text-white flex flex-col items-center space-y-4"
       >
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
           className="text-4xl md:text-6xl font-bold"
         >
           Start Exploring
-        </motion.h1>
+        </motion.h2>
         <p
           className="text-lg md:text-2xl">
           Discover the beauty of your next adventure

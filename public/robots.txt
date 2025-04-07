@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nuzhakashmir.com/api/sitemap.xml

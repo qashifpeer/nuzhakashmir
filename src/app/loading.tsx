@@ -1,8 +1,11 @@
-import React from 'react'
+import { Loader } from "@/components";
+import { motion, useInView } from "framer-motion";
 
 const LoadingPage = () => {
   return (
-    <div>loading.....</div>
+    <div>
+      <Loader />
+    </div>
   )
 }
 

@@ -1,15 +1,15 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
 
-
-import './globals.css'
-import { Footer, Navbar } from '@/components'
-
+import "./globals.css";
+import { Footer, Navbar } from "@/components";
 
 export const metadata: Metadata = {
-  title: 'NuzhaKashmir',
-  description: 'Dive deep into Kashmir with NuzhaKashmir.',
-  keywords: "kashmir, kashmir, pahalgam, kashmirdistance",
+  title: "Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
+  description:
+    "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",
+  keywords:
+    "Kashmir travel blog, Gulmarg travel guide, Kashmir tourism, Sonamarg places to visit, Bangus valley Kashmir, Kashmir itinerary, best time to visit Kashmir, Kashmir travel tips, explore Kashmir, offbeat places in Kashmir, keran valley,",
   openGraph: {
     title: "NuzhaKashmir",
     description: "Dive deep into Kashmir with NuzhaKashmir.",
@@ -17,25 +17,25 @@ export const metadata: Metadata = {
     siteName: "NuzhaKashmir",
     images: [
       {
-        url: "https://yourblog.com/og-image.jpg",
+        url: "https://nuzhakashmir.com/og-image.png",
         width: 1200,
         height: 630,
       },
     ],
     type: "website",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-       <GoogleTagManager gtmId="GTM-TDFZXWPT" />
-      <body className=''>
-      <noscript>
+      <GoogleTagManager gtmId="GTM-TDFZXWPT" />
+      <body className="">
+        <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TDFZXWPT"
             height="0"
@@ -44,9 +44,9 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         <Navbar />
-        <main className='min-h-screen'>{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
-  )
+  );
 }
