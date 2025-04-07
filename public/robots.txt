@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://nuzhakashmir.com/api/sitemap.xml
+
+# Host
+Host: https://nuzhakashmir.com
+
+# Sitemaps
+Sitemap: https://nuzhakashmir.com/sitemap.xml
