@@ -41,6 +41,7 @@ const AboutPage = () => {
           let&#39;s travel across this earthly paradise&#39;s charming valleys,
           verdant meadows, and snow-capped peaks. Join us as we explore Kashmir
           one picture, one tale, and one step at a time.
+          this new Line I am adding to Qashif&#39;s blog.
         </p>
       </div>
     </div>
