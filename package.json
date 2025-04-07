@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -19,6 +20,8 @@
     "lucide-react": "^0.356.0",
     "next": "14.0.4",
     "next-sanity": "^9.8.30",
+    "next-seo": "^6.6.0",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
