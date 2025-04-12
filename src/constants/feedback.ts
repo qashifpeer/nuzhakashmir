@@ -10,37 +10,37 @@ export interface FeedbackCardProps {
       name: "Abishek Kumar",
       address: "Ranchi, India",
       review: "An amazing experience! The team organized everything perfectly.",
-      image: "/images/feedbackPeople/abishek.jpg",
+      image: "/images/feedbackPeople/dummy_m.jpg",
     },
     {
       name: "Manoj Sinha",
       address: "Jaipur,India",
       review: "Beautiful locations and well-organized trips. Highly recommended!",
-      image: "/images/feedbackPeople/manoj.jpg",
+      image: "/images/feedbackPeople/dummy_m.jpg",
     },
     {
       name: "Saransh Vishvekarma",
       address: "Nagpur, India",
       review: "A wonderful adventure! Thanks to the team for a memorable trip.",
-      image: "/images/feedbackPeople/saransh.jpg",
+      image: "/images/feedbackPeople/dummy_m.jpg",
     },
     {
       name: "Abishek Kumar",
       address: "Ranchi, India",
       review: "An amazing experience! The team organized everything perfectly.",
-      image: "/images/feedbackPeople/p1.jpg",
+      image: "/images/feedbackPeople/dummy_m.jpg",
     },
     {
       name: "Abishek Kumar",
       address: "Ranchi, India",
       review: "Beautiful locations and well-organized trips. Highly recommended!",
-      image: "/images/feedbackPeople/p1.jpg",
+      image: "/images/feedbackPeople/dummy_m.jpg",
     },
     {
       name: "Saransh Vishvekarma",
       address: "Nagpur, India",
       review: "A wonderful adventure! Thanks to the team for a memorable trip.",
-      image: "/images/feedbackPeople/p1.jpg",
+      image: "/images/feedbackPeople/dummy_m.jpg",
     },
   ];
   
