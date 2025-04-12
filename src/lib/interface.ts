@@ -11,6 +11,12 @@ interface Author {
     slug : {current: string}
   }
 
+  interface Place {
+    _id: string;
+    name: string;
+    slug : {current: string}
+  }
+
   
   interface Post {
     _id: string;
@@ -23,6 +29,7 @@ interface Author {
     body: string;
     author: Author;
     categories: Category[];
+    place: Place[];
     content: any;
   }
 
@@ -37,6 +44,7 @@ interface Author {
     body: string;
     author: Author;
     categories: Category[];
+    place: Place[];
     content: any;
   }
 
@@ -51,6 +59,7 @@ interface Author {
     body: string;
     author: Author;
     categories: Category[];
+    place: Place[];
     content: any;
 
   }

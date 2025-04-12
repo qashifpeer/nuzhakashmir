@@ -46,6 +46,13 @@ export default{
             of : [{type : 'reference', to: {type: 'category'}}]
         },
         {
+            name: "places",
+            title : "Places",
+            type: "array",
+            of : [{type : 'reference', to: {type: 'place'}}]
+
+        },
+        {
             name : 'shortDescription',
             title : 'Short Description',
             type : "text",

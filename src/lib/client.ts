@@ -30,9 +30,15 @@ export async function getData(){
         },
       categories[]->{
         _id,
-        name,slug
+        name,
+        slug
       },
-          'content' : body
+       places[]->{
+      _id,
+      name,
+      slug
+      },
+         'content' : body
         
     }
     `
@@ -66,6 +72,11 @@ export const getDestinationsData = async () => {
       categories[]->{
         _id,
         name,slug
+      },
+      places[]->{
+      _id,
+      name,
+      slug
       },
        'content' : body
     }`;
