@@ -1,3 +1,4 @@
+// import { DestinationsCard } from '@/components/DestinationsCard';
 import Navbar from "./navbar/Navbar";
 import Footer from "./footer/Footer";
 import Hero from "./hero/Hero";
@@ -10,7 +11,8 @@ import Loader from "./loader/Loader";
 import Feedback from "./feedback/Feedback";
 import ImageCarousel from "./ImageCarousal/ImageCarousal";
 import AboutMeSection from "./aboutMeSection/AboutMeSection";
-import AllDestinations from "./allDestinations/AllDestinations";
+import DestinationsCard from "./destinationsCard/DestinationsCard";
+import BlogCard from "./blogCard/BlogCard";
 
 export {
     Navbar,
@@ -25,6 +27,7 @@ export {
     Feedback,
     ImageCarousel,
     AboutMeSection,
-    AllDestinations,
+    DestinationsCard,
+    BlogCard,
 
 }
