@@ -2,8 +2,8 @@ import {createClient} from 'next-sanity';
 
 export const client = createClient({
     projectId: process.env.SANITY_PROJECT_ID,
-    dataset : 'production',
-    useCdn : true,
+    dataset : process.env.SANITY_DATASET || 'production',
+    useCdn: process.env.NODE_ENV === 'production',
     apiVersion : '2024-04-12',
     // token : process.env.SANITY_SECRET_TOKEN
 });
@@ -43,7 +43,12 @@ export async function getData(){
     }
     `
     const data = await client.fetch(query);
-    return data;
+    
+
+    // console.log("Fetching posts from Sanity...");
+    // const data = await client.fetch(query);
+    // console.log("Fetched posts:", data);
+  return data;
   }
 
   // get posts with destinations
