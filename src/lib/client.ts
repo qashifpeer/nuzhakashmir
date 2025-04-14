@@ -15,7 +15,8 @@ export const client = createClient({
 export async function getData(){
     const query = 
     `
-    *[_type == 'post']{
+    *[_type == 'post'] | order(publishedAt desc)
+    {
       _id,
       title,
       shortDescription,
@@ -61,7 +62,8 @@ export const getDestinationsData = async () => {
     `
     *[_type == 'post' && 
     "Destinations" in categories[]->name
-    ]{
+    ] | order(publishedAt desc)
+     {
       _id,
       title,
       shortDescription,
