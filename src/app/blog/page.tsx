@@ -1,6 +1,7 @@
 import { client, getData } from '@/lib/client';
 import { BlogCard } from '@/components';
 
+export const revalidate = 60; // ISR: revalidate data every 60 seconds
 
 export default async function BlogPage () {
   const posts: PostType[] = await getData();
