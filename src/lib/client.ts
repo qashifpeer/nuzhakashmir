@@ -57,11 +57,11 @@ export async function getData(){
   // getData.ts
 
 
-export const getDestinationsData = async () => {
+export const getPlacesData = async () => {
   const query = 
     `
     *[_type == 'post' && 
-    "Destinations" in categories[]->name
+    "Places" in categories[]->name
     ] | order(publishedAt desc)
      {
       _id,

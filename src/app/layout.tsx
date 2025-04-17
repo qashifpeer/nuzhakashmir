@@ -5,6 +5,7 @@ import "./globals.css";
 import { Footer, Navbar } from "@/components";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nuzhakashmir.com'),
   title: "Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
   description:
     "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",

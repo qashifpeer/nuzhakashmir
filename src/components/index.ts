@@ -10,9 +10,10 @@ import FixedHero from "./fixedHero/FixedHero";
 import Loader from "./loader/Loader";
 import Feedback from "./feedback/Feedback";
 import ImageCarousel from "./ImageCarousal/ImageCarousal";
-import AboutMeSection from "./aboutMeSection/AboutMeSection";
-import DestinationsCard from "./destinationsCard/DestinationsCard";
+import AboutUs from "./aboutUs/AboutUs";
+import PlacesCard from "./placesCard/PlacesCard";
 import BlogCard from "./blogCard/BlogCard";
+import ContactForm from "./contactForm/ContactForm";
 
 export {
     Navbar,
@@ -26,8 +27,9 @@ export {
     Loader,
     Feedback,
     ImageCarousel,
-    AboutMeSection,
-    DestinationsCard,
+    AboutUs,
+    PlacesCard,
     BlogCard,
+    ContactForm,
 
 }

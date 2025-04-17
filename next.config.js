@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
+    // Enable static export for sitemap support
+       images: {
         remotePatterns: [
             {
                 protocol: 'https',
