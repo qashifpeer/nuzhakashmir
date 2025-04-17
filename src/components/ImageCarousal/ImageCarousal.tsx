@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { galleryData } from "@/constants/gallery";
 import Link from "next/link";
-
 
 interface GalleryItemProps {
   src: string;
@@ -44,8 +43,8 @@ const ImageCarousel: React.FC = () => {
             <Image
               src={img.src}
               alt={img.alt}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
               className="transition-opacity duration-1000 ease-in-out"
               priority
             />
@@ -53,9 +52,11 @@ const ImageCarousel: React.FC = () => {
         ))}
       </div>
       <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
-      <Link href={"/gallery"}>  <button className="px-6 py-3 text-white bg-orange-600 rounded-full hover:bg-orange-700">
-          View Gallery
-        </button>
+        <Link href={"/gallery"}>
+          {" "}
+          <button className="px-6 py-3 text-white bg-orange-600 rounded-full hover:bg-orange-700">
+            View Gallery
+          </button>
         </Link>
       </div>
     </div>
