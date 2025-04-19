@@ -4,41 +4,46 @@ import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);  // Add loading state
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 👉 You can add form validation or send it to your server here
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    setLoading(true); // Set loading to true when request starts
 
-    // Optional: Clear form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, phone, email, message }),
+      });
 
-    // Reset the success message after a delay
-    setTimeout(() => setSubmitted(false), 4000);
+      if (response.ok) {
+        setStatus('Quote Received Successfully, We will be in touch with you very soon!');
+        setSubmitted(true);
+        setName('');
+        setPhone('');
+        setEmail('');
+        setMessage('');
+      } else {
+        setStatus('Failed to send feedback. Please try again.');
+      }
+    } catch (error) {
+      setStatus('Error sending feedback.');
+    } finally {
+      setLoading(false); // Set loading to false when request completes
+    }
   };
 
+ 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
@@ -50,8 +55,8 @@ const ContactForm = () => {
           name="name"
           id="name"
           required
-          value={formData.name}
-          onChange={handleChange}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
         />
       </div>
@@ -65,8 +70,8 @@ const ContactForm = () => {
           name="email"
           id="email"
           required
-          value={formData.email}
-          onChange={handleChange}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
         />
       </div>
@@ -80,8 +85,8 @@ const ContactForm = () => {
           name="phone"
           id="phone"
           required
-          value={formData.phone}
-          onChange={handleChange}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
         />
       </div>
@@ -95,21 +100,24 @@ const ContactForm = () => {
           id="message"
           required
           rows={5}
-          value={formData.message}
-          onChange={handleChange}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
         ></textarea>
       </div>
 
       <button
         type="submit"
-        className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+        disabled={loading}  // Disable button when loading is true
+        className={`border-2 border-orange-800 w-60 rounded-3xl p-2 shadow-sm uppercase ubuntu-bold transition-all delay-75 duration-200 ${
+          loading ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'text-orange-800 hover:bg-orange-700 hover:text-white'
+        }`}
       >
-        <FaPaperPlane /> Connect with Us
+        {loading ? 'Sending...' : 'Submit'}
       </button>
 
       {submitted && (
-        <p className="text-green-600 font-semibold mt-4">Thanks! Your message has been sent.</p>
+        <p className="text-green-600 font-semibold mt-4">Thanks! We will be in touch very soon.</p>
       )}
     </form>
   );
