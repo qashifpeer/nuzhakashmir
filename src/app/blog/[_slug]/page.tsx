@@ -6,6 +6,23 @@ import { notFound } from "next/navigation";
 import Head from "next/head";
 import Link from "next/link";
 
+
+// code of formatting headings
+const portableTextComponents = {
+  types: {},
+  marks: {},
+  block: {
+    h1: ({ children }: any) => <h2>{children}</h2>, // downgrade h1 to h2
+    h2: ({ children }: any) => <h2>{children}</h2>,
+    h3: ({ children }: any) => <h3>{children}</h3>,
+    h4: ({ children }: any) => <h4>{children}</h4>,
+    normal: ({ children }: any) => <p>{children}</p>,
+    blockquote: ({ children }: any) => (
+      <blockquote className="border-l-4 pl-4 italic">{children}</blockquote>
+    ),
+  },
+};
+
 // Get recent posts excluding current
 async function getRecentPosts(currentSlug: string) {
   const query = `
@@ -26,6 +43,7 @@ async function getSinglePost(slug: string) {
       'slug': slug.current,
       title,
       content,
+      shortDescription,
       'imageUrl': featureImage.asset->url,
       'altFtImg': featureImage.alt,
       author,
@@ -60,11 +78,11 @@ export async function generateMetadata({
 
   return {
     title: `${data.title} - Nuzha Kashmir`,
-    description: data.body?.slice(0, 160) || "Read this amazing blog post!",
+    description: data.shortDescription || "Read this amazing blog post!",
     metadataBase: new URL("https://nuzhakashmir.com"),
     openGraph: {
       title: data.title,
-      description: data.body?.slice(0, 160),
+      description: data.shortDescription,
       url: `https://nuzhakashmir.com/blog/${data.slug}`,
       images: [{ url: data.imageUrl, width: 800, height: 600 }],
       type: "article",
@@ -72,7 +90,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: data.title,
-      description: data.body?.slice(0, 160),
+      description: data.shortDescription,
       images: [data.imageUrl],
     },
   };
@@ -91,16 +109,16 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
       <div className="">
         <Head>
           <title>{data.title} - Nuzha Kashmir</title>
-          <meta name="description" content={data.body?.slice(0, 160)} />
+          <meta name="description" content={data.shortDescription} />
           <meta property="og:title" content={data.title} />
-          <meta property="og:description" content={data.body?.slice(0, 160)} />
+          <meta property="og:description" content={data.shortDescription} />
           <meta property="og:image" content={data.imageUrl} />
           <meta
             property="og:url"
             content={`https://nuzhakashmir.com/blog/${data.slug}`}
           />
           <meta name="twitter:title" content={data.title} />
-          <meta name="twitter:description" content={data.body?.slice(0, 160)} />
+          <meta name="twitter:description" content={data.shortDescription} />
           <meta name="twitter:image" content={data.imageUrl} />
         </Head>
         {/* title of the post */}
@@ -124,7 +142,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
           {/* content side*/}
 
           <div className="mt-8 prose prose-lg prose-li:marker:text-primary">
-            <PortableText value={data.content} />
+            <PortableText value={data.content} components={portableTextComponents} />
           </div>
 
           {/* SIDEBAR */}
@@ -202,7 +220,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
             dateModified: "2024-01-01",
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://yourblog.com/blog/${data.slug}`,
+              "@id": `https://nuzhakashmir.com/blog/${data.slug}`,
             },
           }),
         }}
