@@ -74,11 +74,17 @@ export async function generateMetadata({
   params: { _slug: string };
 }): Promise<Metadata> {
   const data = await getSinglePost(params._slug);
+  const url = `https://nuzhakashmir.com/blog/${data.slug}`;
+  console.log("url",url)
+
   if (!data) return notFound();
 
   return {
     title: `${data.title} - Nuzha Kashmir`,
     description: data.shortDescription || "Read this amazing blog post!",
+    alternates: {
+      canonical: url,
+    },
     metadataBase: new URL("https://nuzhakashmir.com"),
     openGraph: {
       title: data.title,
@@ -104,7 +110,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
   if (!data) return notFound();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 flex flex-col gap-10 justify-center items-center pt-4 ">
+    <section className="max-w-7xl mx-auto px-4 flex flex-col gap-10 justify-center items-center pt-4 ">
       {/* MAIN CONTENT */}
       <div className="">
         <Head>
@@ -225,7 +231,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
           }),
         }}
       />
-    </div>
+    </section>
   );
 };
 
