@@ -75,7 +75,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const data = await getSinglePost(params._slug);
   const url = `https://nuzhakashmir.com/blog/${data.slug}`;
-  console.log("url",url)
 
   if (!data) return notFound();
 
@@ -216,14 +215,15 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
             },
             publisher: {
               "@type": "Organization",
-              name: "My Blog",
+              name: "Nuzha Kashmir",
               logo: {
                 "@type": "ImageObject",
-                url: "https://yourblog.com/logo.png",
+                url: "https://nuzhakashmir.com/logo.png",
               },
             },
-            datePublished: "2024-01-01",
-            dateModified: "2024-01-01",
+            datePublished: data.publishedAt,
+            dateModified: data.updatedAt  || data.publishedAt,
+            description: data.excerpt || data.shortDescription || "",
             mainEntityOfPage: {
               "@type": "WebPage",
               "@id": `https://nuzhakashmir.com/blog/${data.slug}`,
