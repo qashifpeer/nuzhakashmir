@@ -1,14 +1,41 @@
-// app/contact/page.tsx or wherever your contact page lives
+// app/contact/page.tsx or where
+import { Metadata } from "next";
 
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { ContactForm } from "@/components";
 
+export const metadata: Metadata = {
+  metadataBase: new URL('https://nuzhakashmir.com'),
+  title: "Contacts-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
+  description:
+    "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",
+  keywords:
+    "Kashmir travel blog, Gulmarg travel guide, Kashmir tourism, Sonamarg places to visit, Bangus valley Kashmir, Kashmir itinerary, best time to visit Kashmir, Kashmir travel tips, explore Kashmir, offbeat places in Kashmir, keran valley,",
+  openGraph: {
+    title: "NuzhaKashmir",
+    description: "Dive deep into Kashmir with NuzhaKashmir.",
+    url: "https://nuzhakashmir.com/food",
+    siteName: "NuzhaKashmir",
+    images: [
+      {
+        url: "https://nuzhakashmir.com/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+};
+
+
+
 const ContactPage = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-12">
+      
       {/* Address Section */}
       <div className="space-y-8 bg-white p-8 rounded-2xl shadow-md">
-        <h2 className="text-3xl font-bold text-primary mb-4">Contact Information</h2>
+        <h1 className="text-3xl font-bold text-primary mb-4">Contact Information</h1>
         <div className="flex items-start gap-4">
           <FaMapMarkerAlt className="text-green-600 text-xl mt-1" />
           <div>

@@ -1,11 +1,11 @@
-import { AboutUs } from "@/components";
-import { client } from "@/lib/client";
-import { Metadata } from "next";
+import { notFound } from 'next/navigation';
+import { packagesData } from '@/constants/packages';
 
-// seo metadata
+import { Metadata } from 'next';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://nuzhakashmir.com'),
-  title: "About-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
+  title: "Packages-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
   description:
     "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",
   keywords:
@@ -26,13 +26,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function AboutPage() {
-  const recentPosts = await client.fetch(`
-    *[_type=='post'] | order(publishedAt desc)[0...5] {
-      title,
-      'slug': slug.current
-    }
-  `);
 
-  return <AboutUs recentPosts={recentPosts} />;
+export async function generateStaticParams() {
+    return packagesData.map((pkg) => ({
+      slug: pkg.slug,
+    }));
+  }
+
+export default async function PackageDetailPage({ params }: { params: { _slug: string } }) {
+  const pkg = packagesData.find((p) => p.slug === params._slug);
+
+  if (!pkg) return notFound();
+
+  return (
+    <div className="max-w-3xl mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-2">{pkg.title}</h1>
+      <p className="text-gray-600 mb-4">{pkg.description}</p>
+      <div className="whitespace-pre-line">{pkg.price}</div>
+    </div>
+  );
 }

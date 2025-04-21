@@ -30,11 +30,11 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Destinations</h3>
           <ul className="space-y-2">
-           <li> <Link href="/destinations/pahalgam" className="hover:underline" >Pahalgam</Link></li>
-           <li> <Link href="/destinations/srinagar" className="hover:underline" >Srinagar</Link></li>
-           <li> <Link href="/destinations/gulmarg" className="hover:underline" >Gulmarg</Link></li>
-           <li> <Link href="/destinations/sonamarg" className="hover:underline" >Sonamrg</Link></li>
-           <li className="text-orange-800"> <Link href="/destinations/" className="hover:underline" >View All</Link></li>
+           <li> <Link href="/packages/tempting-kashmir-honeymoon" className="hover:underline" >Pahalgam</Link></li>
+           <li> <Link href="/packages/splendid-srinagar" className="hover:underline" >Srinagar</Link></li>
+           <li> <Link href="/packages/kashmir-family-tour" className="hover:underline" >Gulmarg</Link></li>
+           <li> <Link href="/packages/offbeat-kashmir" className="hover:underline" >Sonamrg</Link></li>
+           <li className="text-orange-800"> <Link href="/packages/" className="hover:underline" >View All</Link></li>
            
             
           </ul>

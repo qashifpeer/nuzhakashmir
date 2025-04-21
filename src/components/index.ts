@@ -14,6 +14,8 @@ import AboutUs from "./aboutUs/AboutUs";
 import PlacesCard from "./placesCard/PlacesCard";
 import BlogCard from "./blogCard/BlogCard";
 import ContactForm from "./contactForm/ContactForm";
+import PackageCard from "./packageCard/PackageCard";
+import SlicedPackages from "./tourPackages/SlicedPackages";
 
 export {
     Navbar,
@@ -31,5 +33,7 @@ export {
     PlacesCard,
     BlogCard,
     ContactForm,
+    PackageCard,
+    SlicedPackages,
 
 }

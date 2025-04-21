@@ -11,15 +11,15 @@ const fadeUpOnScroll: Variants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const TourPackages: React.FC = () => {
+const SlicedPackages: React.FC = () => {
   // Slice the array to get the latest four packages
-  // const latestPackages = packagesData.slice(0, 4);
+  const latestPackages = packagesData.slice(0, 4);
 
   return (
     <div className="container">
       <div className=" flex justify-between items-center pl-4 gap-2 bg-gradient-to-r from-orange-800 to-slate-900">
         <h2 className="text-xl text-slate-100   uppercase font-kalam py-2">
-          Handcrafted Packages for you
+          Handpicked Packages
         </h2>
         <Link href="/packages">
           <h2 className="text-lg text-slate-100   uppercase font-kalam py-2 underline cursor-pointer">
@@ -29,7 +29,7 @@ const TourPackages: React.FC = () => {
         {/* <FaCanadianMapleLeaf className="text-xl" /> */}
       </div>
       <div className="mx-auto py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {packagesData.map((pkg, index) => (
+        {latestPackages.map((pkg, index) => (
           <Link key={index} href={`packages/${pkg.slug}`}>
             <motion.div
               className="relative w-full h-96 bg-cover bg-center rounded-lg shadow-lg cursor-pointer"
@@ -56,4 +56,4 @@ const TourPackages: React.FC = () => {
   );
 };
 
-export default TourPackages;
+export default SlicedPackages;
