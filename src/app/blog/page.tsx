@@ -1,19 +1,25 @@
 import { client, getData } from "@/lib/client";
 import { BlogCard } from "@/components";
 import type { Metadata } from "next";
+import Head from "next/head";
 
 // Metadata for SEO
 export const metadata: Metadata = {
   metadataBase: new URL("https://nuzhakashmir.com"),
   title: "Blog-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
+  
   description:
     "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",
   keywords:
     "Kashmir travel blog, Gulmarg travel guide, Kashmir tourism, Sonamarg places to visit, Bangus valley Kashmir, Kashmir itinerary, best time to visit Kashmir, Kashmir travel tips, explore Kashmir, offbeat places in Kashmir, keran valley,",
-  openGraph: {
+    robots: {
+      index: false,
+      follow: true,
+    },
+    openGraph: {
     title: "NuzhaKashmir",
     description: "Dive deep into Kashmir with NuzhaKashmir.",
-    url: "https://nuzhakashmir.com/food",
+    url: "https://nuzhakashmir.com/blog",
     siteName: "NuzhaKashmir",
     images: [
       {
@@ -32,6 +38,7 @@ export default async function BlogPage() {
   const posts: PostType[] = await getData();
   return (
     <section className="max-w-7xl mx-auto mt-10 p-4">
+      
       <div className="flex justify-between items-center pl-4 my-4 bg-gradient-to-r from-orange-800 to-slate-900">
         <h1 className="text-xl text-slate-100   uppercase font-kalam py-2">
           Blog

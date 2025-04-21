@@ -12,12 +12,16 @@ export const metadata: Metadata = {
   title: "Places-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
   description:
     "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",
-  keywords:
+    robots: {
+      index: false,
+      follow: true,
+    },
+    keywords:
     "Kashmir travel blog, Gulmarg travel guide, Kashmir tourism, Sonamarg places to visit, Bangus valley Kashmir, Kashmir itinerary, best time to visit Kashmir, Kashmir travel tips, explore Kashmir, offbeat places in Kashmir, keran valley,",
   openGraph: {
     title: "NuzhaKashmir",
     description: "Dive deep into Kashmir with NuzhaKashmir.",
-    url: "https://nuzhakashmir.com/food",
+    url: "https://nuzhakashmir.com/places",
     siteName: "NuzhaKashmir",
     images: [
       {

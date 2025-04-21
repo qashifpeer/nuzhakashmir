@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NuzhaKashmir",
     description: "Dive deep into Kashmir with NuzhaKashmir.",
-    url: "https://nuzhakashmir.com/food",
+    url: "https://nuzhakashmir.com/contact",
     siteName: "NuzhaKashmir",
     images: [
       {
