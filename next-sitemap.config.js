@@ -9,7 +9,7 @@ const client = createClient({
 });
 
 const sitemapConfig = {
-  siteUrl: 'https://nuzhakashmir.com',
+  siteUrl: 'https://www.nuzhakashmir.com',
   generateRobotsTxt: true,
   async additionalPaths(config) {
     const posts = await client.fetch(`*[_type == "post"]{ "slug": slug.current, publishedAt }`);

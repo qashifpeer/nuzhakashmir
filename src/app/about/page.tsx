@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 // seo metadata
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nuzhakashmir.com'),
+  metadataBase: new URL('https://www.nuzhakashmir.com'),
   title: "About-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
   description:
     "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     openGraph: {
     title: "NuzhaKashmir",
     description: "Dive deep into Kashmir with NuzhaKashmir.",
-    url: "https://nuzhakashmir.com/about",
+    url: "https://www.nuzhakashmir.com/about",
     siteName: "NuzhaKashmir",
     images: [
       {
-        url: "https://nuzhakashmir.com/og-image.png",
+        url: "https://www.nuzhakashmir.com/og-image.png",
         width: 1200,
         height: 630,
       },

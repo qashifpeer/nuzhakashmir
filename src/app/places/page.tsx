@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const revalidate = 60; // ISR: revalidate data every 60 seconds
 // Metadata for SEO
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nuzhakashmir.com'),
+  metadataBase: new URL('https://www.nuzhakashmir.com'),
   title: "Places-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
   description:
     "Discover the best places to visit in Kashmir, including Gulmarg, Pahalgam, Sonamarg & Bangus. Your complete travel guide for unforgettable experiences.",
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NuzhaKashmir",
     description: "Dive deep into Kashmir with NuzhaKashmir.",
-    url: "https://nuzhakashmir.com/places",
+    url: "https://www.nuzhakashmir.com/places",
     siteName: "NuzhaKashmir",
     images: [
       {
-        url: "https://nuzhakashmir.com/og-image.png",
+        url: "https://www.nuzhakashmir.com/og-image.png",
         width: 1200,
         height: 630,
       },

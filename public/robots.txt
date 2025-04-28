@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://nuzhakashmir.com
+Host: https://www.nuzhakashmir.com
 
 # Sitemaps
-Sitemap: https://nuzhakashmir.com/sitemap.xml
+Sitemap: https://www.nuzhakashmir.com/sitemap.xml
