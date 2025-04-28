@@ -5,7 +5,7 @@ import Head from "next/head";
 
 // Metadata for SEO
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nuzhakashmir.com"),
+  metadataBase: new URL("https://www.nuzhakashmir.com"),
   title: "Blog-Nuzha Kashmir: Travel Guide to Gulmarg, Pahalgam & More",
   
   description:
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     openGraph: {
     title: "NuzhaKashmir",
     description: "Dive deep into Kashmir with NuzhaKashmir.",
-    url: "https://nuzhakashmir.com/blog",
+    url: "https://www.nuzhakashmir.com/blog",
     siteName: "NuzhaKashmir",
     images: [
       {
-        url: "https://nuzhakashmir.com/og-image.png",
+        url: "https://www.nuzhakashmir.com/og-image.png",
         width: 1200,
         height: 630,
       },

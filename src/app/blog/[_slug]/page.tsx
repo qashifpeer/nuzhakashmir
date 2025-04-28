@@ -74,7 +74,7 @@ export async function generateMetadata({
   params: { _slug: string };
 }): Promise<Metadata> {
   const data = await getSinglePost(params._slug);
-  const url = `https://nuzhakashmir.com/blog/${data.slug}`;
+  const url = `https://www.nuzhakashmir.com/blog/${data.slug}`;
 
   if (!data) return notFound();
 
@@ -84,11 +84,11 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
     },
-    metadataBase: new URL("https://nuzhakashmir.com"),
+    metadataBase: new URL("https://www.nuzhakashmir.com"),
     openGraph: {
       title: data.title,
       description: data.shortDescription,
-      url: `https://nuzhakashmir.com/blog/${data.slug}`,
+      url: `https://www.nuzhakashmir.com/blog/${data.slug}`,
       images: [{ url: data.imageUrl, width: 800, height: 600 }],
       type: "article",
     },
@@ -120,7 +120,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
           <meta property="og:image" content={data.imageUrl} />
           <meta
             property="og:url"
-            content={`https://nuzhakashmir.com/blog/${data.slug}`}
+            content={`https://www.nuzhakashmir.com/blog/${data.slug}`}
           />
           <meta name="twitter:title" content={data.title} />
           <meta name="twitter:description" content={data.shortDescription} />
@@ -218,7 +218,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
               name: "Nuzha Kashmir",
               logo: {
                 "@type": "ImageObject",
-                url: "https://nuzhakashmir.com/logo.png",
+                url: "https://www.nuzhakashmir.com/logo.png",
               },
             },
             datePublished: data.publishedAt,
@@ -226,7 +226,7 @@ const BlogPost = async ({ params }: { params: { _slug: string } }) => {
             description: data.excerpt || data.shortDescription || "",
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://nuzhakashmir.com/blog/${data.slug}`,
+              "@id": `https://www.nuzhakashmir.com/blog/${data.slug}`,
             },
           }),
         }}
